@@ -12,6 +12,13 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
     steps:
      - name: Hola mundo
        run: echo "Hola mundo $NAME" #comando que se ejecuta en el trabajo
+     - name: working dir
+       run: ls -al #comando que se ejecuta en el trabajo para listar archivos
+     - name: action
+       uses: actions/checkout@v4   #acción que se ejecuta en el trabajo
+     - name: working dir after action
+       run: ls -al #comando que se ejecuta en el trabajo para listar archivos después de la acción
+
      #- name: ver archivo PHP  
       # run: cat hola.php $NAME #comando que se ejecuta en el trabajo
   second_jobs: #nombre del segundo trabajo
