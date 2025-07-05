@@ -7,6 +7,9 @@ on: push
 jobs: #trabajos que se ejecutan en el flujo de trabajo
   first_jobs: #nombre del trabajo
     runs-on: ubuntu-latest #sistema operativo en el que se ejecuta el trabajo
+    outputs:
+      salida: hola job 1 
+      salida2: ${{steps.step1.outputs.variable}} #variable de salida del trabajo
     env:
      NAME: codigo facilito
     steps:
@@ -33,6 +36,8 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
     needs: 
       - first_jobs #dependencia del primer trabajo
     runs-on: ubuntu-latest #sistema operativo en el que se ejecuta el trabajo
+    env:
+      SALIDA: ${{ needs.first_jobs.outputs.salida }} #variable de entorno que obtiene el valor de la salida del primer trabajo
     steps:
        
      - name: Hola mundo 2
