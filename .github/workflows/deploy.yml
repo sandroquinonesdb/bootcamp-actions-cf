@@ -11,7 +11,7 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
      NAME: codigo facilito
     steps:
      - name: Hola mundo
-       id: step1
+       
        run: echo "Hola mundo $NAME" #comando que se ejecuta en el trabajo
      - name: working dir
        run: ls -al #comando que se ejecuta en el trabajo para listar archivos
@@ -20,6 +20,7 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
      - name: working dir after action
        run: ls -al #comando que se ejecuta en el trabajo para listar archivos después de la acción
      - name: $GITHUB_OUTPUT
+       id: step1
        run: echo "variable=DANDO VALOR" >> $GITHUB_OUTPUT #comando que se ejecuta en el trabajo para establecer una variable de salida
      - name: obtener mensaje
        run: echo "${{steps.step1.outputs.variable}}" #comando que se ejecuta en el trabajo para obtener el valor de la variable de salida
