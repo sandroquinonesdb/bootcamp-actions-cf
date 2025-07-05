@@ -22,5 +22,5 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
     steps:
        
      - name: Hola mundo 2
-       if: false #condición para ejecutar el segundo trabajo
+       #if: false #condición para ejecutar el segundo trabajo
        run: echo "Hola mundo ${{github.ref}}" #comando que se ejecuta en el segundo trabajo
