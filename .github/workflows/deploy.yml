@@ -28,4 +28,4 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
        run: echo "Hola mundo ${{github.ref}}" #comando que se ejecuta en el segundo trabajo
      - name: ver variable de entorno 
 
-       run: echo "La variable de entorno de el job anterior ${{ needs.first_job.outputs.NAME }}" #comando que se ejecuta en el segundo trabajo  
+       run: echo "La variable de entorno de el job anterior ${{ needs.first_jobs.outputs.NAME }}" #comando que se ejecuta en el segundo trabajo  
