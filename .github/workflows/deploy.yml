@@ -11,7 +11,7 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
      NAME: codigo facilito
     steps:
      - name: Hola mundo
-       run: echo "Hola mundo" #comando que se ejecuta en el trabajo
+       run: echo "Hola mundo $NAME" #comando que se ejecuta en el trabajo
      #- name: ver archivo PHP  
       # run: cat hola.php $NAME #comando que se ejecuta en el trabajo
   second_jobs: #nombre del segundo trabajo
