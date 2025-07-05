@@ -38,8 +38,12 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
     runs-on: ubuntu-latest #sistema operativo en el que se ejecuta el trabajo
     env:
       SALIDA: ${{ needs.first_jobs.outputs.salida }} #variable de entorno que obtiene el valor de la salida del primer trabajo
+      SALIDA2: ${{ needs.first_jobs.outputs.salida2 }} #variable de entorno que obtiene el valor de la salida del primer trabajo
     steps:
-       
+     - name: Hola mundo 1
+       run: echo "Hola mundo ${{ env.SALIDA }}" #comando que se ejecuta en el segundo trabajo  
+     - name: hola mundo 1.5
+       run: echo "Hola mundo ${{ env.SALIDA2 }}" #comando que se ejecuta en el segundo trabajo para obtener la salida de la variable de salida del primer trabajo
      - name: Hola mundo 2
        #if: false #condición para ejecutar el segundo trabajo
        run: echo "Hola mundo ${{github.ref}}" #comando que se ejecuta en el segundo trabajo
