@@ -50,3 +50,11 @@ jobs: #trabajos que se ejecutan en el flujo de trabajo
      - name: ver variable de entorno 
 
        run: echo "La variable de entorno de el job anterior ${{ needs.first_jobs.outputs.name_value }}" #comando que se ejecuta en el segundo trabajo  
+     - name: genear archivo
+       run: |
+        echo "archivo prueva, hola" >>text.log
+     - name: subir artefacto
+       uses: actions/upload-artifact@v4 #acción que se ejecuta en el trabajo para subir un artefacto
+       with:
+          name: archivos test #nombre del artefacto
+          path: test.log
